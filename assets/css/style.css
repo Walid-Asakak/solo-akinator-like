@@ -1,0 +1,40 @@
+/******************************************************************************/
+/******************** GLOBAL : ********************************/
+/******************************************************************************/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/******************************************************************************/
+/******************** LAYOUT : HEADER & FOOTER ********************************/
+/******************************************************************************/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: #406c4a;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+footer {
+    padding: 0.75rem;
+    color: white;
+    background-color: #333333;
+}
+
+footer p {
+    text-align: center;
+}
