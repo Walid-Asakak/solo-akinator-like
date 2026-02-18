@@ -16,8 +16,8 @@ function insertUserIntoDb(array $user, string $passwordHashed): ?int {
             VALUES(:username, :email, :password)'
         );
         
-        $request -> bindParam(':username', $username, PDO::PARAM_STR);
-        $request -> bindParam(':email', $email, PDO::PARAM_STR);
+        $request -> bindParam(':username', $user['username'], PDO::PARAM_STR);
+        $request -> bindParam(':email', $user['email'], PDO::PARAM_STR);
         $request -> bindParam(':password', $passwordHashed, PDO::PARAM_STR);
         
         $request -> execute();
