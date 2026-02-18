@@ -32,8 +32,6 @@ if (isset($_POST['change-password'])) {
 // Delete the user account :
 if (isset($_POST['delete-account'])) {
     deleteUserAccount($userId);
-    header('Location: login.php');
-    exit();
 }
 
 // Integration of the template & layout :

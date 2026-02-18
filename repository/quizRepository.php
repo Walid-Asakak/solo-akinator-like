@@ -80,7 +80,7 @@ function getQuestionById(int $questionId): ?array {
     }   
 }
 
-function getAnswerForQuestion(int $questioniD, string $answer): ?array {
+function getAnswerForQuestion(int $questionid, string $answer): ?array {
     $db = connectToDataBase();
 
     try {

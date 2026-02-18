@@ -1,7 +1,7 @@
 <div class="quiz-page">
     <h1>Quiz</h1>
     <div class="quiz-card">
-        <h2>question</h2>
+        <h2><?= htmlspecialchars($question['question_text']); ?></h2>
         
         <form method="POST" class="quiz-form">
             <button type="submit" name="answer" value="oui">Oui</button>
