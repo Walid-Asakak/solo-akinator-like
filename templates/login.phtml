@@ -1,0 +1,20 @@
+<div class="login-page">
+    <div class="login-card">
+        <h1>Connexion</h1>
+        <form method="POST" action="login.php">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password">
+            
+            <button type="submit">Me connecter</button>
+            
+            <?php if (!empty($error)): ?>
+                <p class ="error"><?= htmlspecialchars($error) ?></p>
+            <?php endif;?>
+            
+            <a href="signup.php">Pas de compte ?</a>
+        </form>
+    </div>
+</div>

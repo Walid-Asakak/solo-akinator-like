@@ -71,14 +71,20 @@ footer p {
     color: #363a3f;
 }
 
-.signup-card {
+/******************************************************************************/
+/******************** FORM (SIGNUP AND LOGIN) *********************************/
+/******************************************************************************/
+
+.signup-card,
+.login-card {
     width: 800px;
     padding: 5rem;
     background-color: #dccadd;
     text-align: center;
 }
 
-.signup-card label {
+.signup-card label,
+.login-card label {
     display: block;
     text-align: center;
     margin-bottom: 5px;
@@ -86,7 +92,8 @@ footer p {
     font-size: 1.2rem;
 }
 
-.signup-card input {
+.signup-card input,
+.login-card input {
     width: 50%;
     padding: 10px 12px;
     margin-bottom: 20px;
@@ -96,10 +103,9 @@ footer p {
     transition: border 0.3s;
 }
 
-/* INDEX PAGE + SIGNUP PAGE SIMILAR STYLE */
-
-
+/* INDEX PAGE + SIGNUP PAGE SIMILAR STYLE BUTTONS */
 .signup-card button,
+.login-card button,
 .index-card a {
     display: inline-block;
     color: white;
@@ -108,7 +114,9 @@ footer p {
     border-radius: 0.25rem;
     background-color: #406c4a;
 }
-.signup-card button {
+
+.signup-card button,
+.login-card button {
     margin: auto;
     display: block;
     color: white;
@@ -116,20 +124,26 @@ footer p {
     cursor: pointer;
 }
 
-.signup-card .error {
+.login-card button {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.error {
     font-size: 1.2rem;
     color: red;
     font-weight: bold;
     margin: 1rem;
 }
 
-.signup-card a {
+.signup-card a,
+.login-card a {
     color: black;
     font-size: 1.2rem;
 }
 
 /******************************************************************************/
-/*********************** PAGE INDEX ******************************************/
+/*********************** PAGE INDEX *******************************************/
 /******************************************************************************/
 .index-card {
     text-align: center;
@@ -138,3 +152,7 @@ footer p {
 .index-page .index-card h1 {
     margin: 2rem;
 }
+
+/******************************************************************************/
+/*********************** PAGE LOGIN *******************************************/
+/******************************************************************************/
