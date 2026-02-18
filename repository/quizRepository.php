@@ -47,3 +47,75 @@ function getHistoryByUser(int $userId): array {
         return [];
     }
 }
+
+// Functions to make the game works :
+
+function getFirstQuestion(): ?array {
+    $db = connectToDataBase();
+    
+    try {
+        $request = $db -> prepare('SELECT * FROM questions WHERE is_first_question =1');
+        $request -> execute();
+        $firstQuestion = $request -> fetch(PDO::FETCH_ASSOC);
+        return $firstQuestion ?: null;
+    }
+    catch (Exception $e) {
+        return null;
+    }
+}
+
+function getQuestionById(int $questionId): ?array {
+    $db = connectToDataBase();
+    
+    try {
+        $request = $db -> prepare('SELECT * FROM questions WHERE id = :id');
+        $request -> bindParam(':id', $questionId, PDO::PARAM_INT);
+        $request -> execute();
+        $question = $request -> fetch(PDO::FETCH_ASSOC);
+        
+        return $question ?: null;
+    }
+    catch (Exception $e) {
+        return null;
+    }   
+}
+
+function getAnswerForQuestion(int $questioniD, string $answer): ?array {
+    $db = connectToDataBase();
+
+    try {
+        $request = $db -> prepare('SELECT * FROM answers 
+            WHERE question_id = :question_id AND
+            answer = :answer'
+        );
+        
+        $request -> bindParam(':question_id', $questionId, PDO::PARAM_INT);
+        $request -> bindParam(':answer', $answer, PDO::PARAM_STR);
+        
+        $request -> execute();
+        $answer = $request -> fetch(PDO::FETCH_ASSOC);
+        
+        return $answer ?: null;
+    }
+    catch (Exception $e) {
+        return null;
+    }   
+}
+
+function getResultById(int $resultId): ?array {
+    $db = connectToDataBase();
+
+    try {
+        $request = $db -> prepare('SELECT * FROM results WHERE id = :id');
+        
+        $request -> bindParam(':id', $resultId, PDO::PARAM_INT);
+        
+        $request -> execute();
+        $result = $request -> fetch(PDO::FETCH_ASSOC);
+        
+        return $result ?: null;
+    }
+    catch (Exception $e) {
+        return null;
+    }     
+}
