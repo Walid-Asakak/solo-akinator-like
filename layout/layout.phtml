@@ -13,9 +13,14 @@
             <a href="index.php">Accueil</a>
         </div>
         <nav>
-            
-            <a href="login.php">Connexion</a>
-            <a href="signup.php">Inscription</a>
+            <?php if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true): ?>
+                <a href="game.php">Jouer</a>
+                <a href="myAccount.php">Mon compte</a>
+                <a href="logout.php">Déconnexion</a>
+            <?php else : ?>
+                <a href="login.php">Connexion</a>
+                <a href="signup.php">Inscription</a>
+            <?php endif; ?>
         </nav>
     </header>
     

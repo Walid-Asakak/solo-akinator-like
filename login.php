@@ -11,10 +11,13 @@ if(!empty($_POST)) {
     $password = $_POST['password'];
     
     $user = getUserByEmail($email);
+    
     // We verify if the password is not wrong : 
     if($user && password_verify($password, $user['password'])) {
+        $_SESSION['loggedIn'] = true;
         // Redirection to index -> the login worked
         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
         header('Location: index.php');
         exit();
     }
