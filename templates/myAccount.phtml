@@ -5,7 +5,13 @@
 
         <section class="account-section">
             <h2>Historique des parties</h2>
-            <p>Aucune partie enregistrée pour le moment.</p>
+            <?php if (!empty($successUpdatePassword)): ?>
+                <p class="succes"><?= htmlspecialchars($successUpdatePassword) ?></p>
+            <?php endif; ?>
+            
+            <?php if (!empty($error)): ?>
+                <p class="succes"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
         </section>
 
         <section class="account-section">

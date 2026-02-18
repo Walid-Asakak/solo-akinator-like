@@ -14,11 +14,24 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
 $userId = $_SESSION['user_id'];
 $historyGames = getHistoryByUser($userId);
 
+$successUpdatePassword = '';
+$error = '';
+
 if (isset($_POST['change-password'])) {
     $currentPassword = $_POST['current-password'];
     $newPassword = $_POST['new-password'];
     
-    $db = connectToDataBase();
+    if (changeUserPassword($userId, $currentPassword, $newPassword)) {
+        $successUpdatePassword = 'Votre mot de passe a bien été changé';
+    }
+    else {
+        $error = 'Mot de passe incorrect';
+    }
+}
+
+// Delete the user account :
+if (isset($_POST['delete-account'])) {
+    deleteUserAccount($userId);
 }
 
 // Integration of the template & layout :
