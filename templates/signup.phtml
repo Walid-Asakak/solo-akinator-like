@@ -2,7 +2,7 @@
     <div class="signup-card">
         <h1>Inscription</h1>
         
-        <form method="POST" action="signup.php">
+        <form method="POST">
             <label for="username">Nom d'utilisateur</label>
             <input type="text" name="username" id="username" required>
             
@@ -12,9 +12,9 @@
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required>
             
-            <button type="submit">S'inscrie</button>
-            
-            <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
+            <button type="submit">S'inscrire</button>
+            <p class="error"><?= $error ?></p>
+            <a href="login.php">Déjà un compte ?</a></p>
         </form>
     </div>
 </div>
