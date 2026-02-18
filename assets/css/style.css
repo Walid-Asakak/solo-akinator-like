@@ -110,6 +110,7 @@ footer p {
 }
 .signup-card button {
     margin: auto;
+    display: block;
     color: white;
     border: none;
     cursor: pointer;
