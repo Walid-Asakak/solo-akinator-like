@@ -49,3 +49,18 @@ function getUserByEmail(string $email): ?array {
         return null;
     }
 }
+
+function deleteUserAccount(int $userId): bool {
+    $db = connectToDataBase();
+    
+    try {
+        $request = $db -> prepare('DELETE FROM users WHERE id = :user_id');
+        $request -> bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $request -> execute();
+        return true;
+    }
+    catch (exception $e) {
+        // die($e -> getMessage());
+        return false;
+    }
+}
