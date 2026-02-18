@@ -50,6 +50,43 @@ function getUserByEmail(string $email): ?array {
     }
 }
 
+function changeUserPassword(int $userId, string $currentPassword, string $newPassword): bool {
+
+    $db = connectToDataBase();
+
+    try {
+        // Get the current password
+        $request = $db->prepare('SELECT password FROM users WHERE id = :id');
+        $request->bindParam(':id', $userId, PDO::PARAM_INT);
+        $request->execute();
+
+        $user = $request->fetch(PDO::FETCH_ASSOC);
+
+        if (!$user) {
+            return false;
+        }
+
+        // Verify the old password
+        if (!password_verify($currentPassword, $user['password'])) {
+            return false;
+        }
+
+        //
+        $newPasswordHashed = password_hash($newPassword, PASSWORD_DEFAULT);
+
+        // Update the password in the database
+        $update = $db->prepare('UPDATE users SET password = :password WHERE id = :id');
+        $update->bindParam(':password', $newPasswordHashed, PDO::PARAM_STR);
+        $update->bindParam(':id', $userId, PDO::PARAM_INT);
+        $update->execute();
+
+        return true;
+
+    } catch (Exception $e) {
+        return false;
+    }
+}
+
 function deleteUserAccount(int $userId): bool {
     $db = connectToDataBase();
     
