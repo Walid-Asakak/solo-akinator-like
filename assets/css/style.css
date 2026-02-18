@@ -31,6 +31,11 @@ a {
     color: white;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+}
+
 /******************************************************************************/
 /******************** LAYOUT : HEADER & FOOTER ********************************/
 /******************************************************************************/
@@ -91,15 +96,22 @@ footer p {
     transition: border 0.3s;
 }
 
-.signup-card button {
-    display: block;
-    margin: auto;
+/* INDEX PAGE + SIGNUP PAGE SIMILAR STYLE */
+
+
+.signup-card button,
+.index-card a {
+    display: inline-block;
     color: white;
     font-size: 1.2rem;
-    background-color: #406c4a;
     padding: 0.45rem;
-    border: none;
     border-radius: 0.25rem;
+    background-color: #406c4a;
+}
+.signup-card button {
+    margin: auto;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
@@ -113,4 +125,15 @@ footer p {
 .signup-card a {
     color: black;
     font-size: 1.2rem;
+}
+
+/******************************************************************************/
+/*********************** PAGE INDEX ******************************************/
+/******************************************************************************/
+.index-card {
+    text-align: center;
+}
+
+.index-page .index-card h1 {
+    margin: 2rem;
 }
