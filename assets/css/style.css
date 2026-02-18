@@ -198,3 +198,60 @@ footer p {
     border-top: 1px solid #ddd;
     padding-top: 2rem;
 }
+
+/******************************************************************************/
+/********************************* GAME PAGE (quiz) ***************************/
+/******************************************************************************/
+
+.quiz-page {
+    text-align: center;
+}
+
+.quiz-page h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.quiz-card {
+    width: 100%;
+    max-width: 700px;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+}
+
+.quiz-card h2 {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.quiz-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.quiz-form button {
+    width: 100%;
+    max-width: 220px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #406c4a;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.quiz-form button:hover {
+    background-color: #2f5236;
+    transform: translateY(-2px);
+}
+
