@@ -1,6 +1,6 @@
 <?php
 
-include 'repository/connection.php';
+require_once 'repository/connection.php';
 
 function insertUserIntoDb(array $user, string $passwordHashed): ?int {
     $db = connectToDataBase();

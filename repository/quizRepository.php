@@ -1,6 +1,6 @@
 <?php
 
-include 'repository/connection.php';
+require_once 'repository/connection.php';
 function insertGameIntoDatabase(int $userId, int $resultId): ?int {
     $db = connectToDataBase();
     

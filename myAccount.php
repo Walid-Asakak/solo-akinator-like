@@ -2,8 +2,8 @@
 
 session_start();
 
-include 'repository/quizRepository.php';
-include 'repository/userRepository.php';
+require_once 'repository/quizRepository.php';
+require_once 'repository/userRepository.php';
 
 // Security : If the user is not connected
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
@@ -32,6 +32,8 @@ if (isset($_POST['change-password'])) {
 // Delete the user account :
 if (isset($_POST['delete-account'])) {
     deleteUserAccount($userId);
+    header('Location: login.php');
+    exit();
 }
 
 // Integration of the template & layout :
